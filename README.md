@@ -22,6 +22,37 @@ VER=107
 PWR=1
 
 2. I can pair new devices by sending "AT+PAIR=0" to the UART, number doesn't seem to matter, i it works regardless of what i put there (tried 0, 6, 60), in return i get "PAIR=4"(4 is probably the total number of paired divices).
-3. If it does not "understand" what the comand is it thows "ERR=11" but only if part of the comand is somawhat correct(does not respond to complete gibberish, for examle it responds to "AT+" and nothing for "ABC=1")
+3. When connecting it sends a bunch of different data about connection, example:
+
+NEGOTIATING
+
+A2DP=1
+
+A2DP=2
+
+RATE=44100
+
+AVRCP=1
+
+AVRCP=2
+
+ABSVC=68
+
+AVRCP_VER=1.4
+
+PSC=0
+
+AVRCP=0
+
+A2DP=0
+
+ALOST
+
+PAIR=3
+
+4. After that if the volume is changed it send its level in range of 0 to 127 (for example "ABSVC=68")
+5. If it does not "understand" what the comand is it thows "ERR=11" but only if part of the comand is somawhat correct(does not respond to complete gibberish, for examle it responds to "AT+" and nothing for "ABC=1")
 
 After pairing and conecting i can play audio and it outputs it on spdif out, witch is totally useless for me... nothing  on analog outputs(not surprising).
+
+Next i will try changing its config so it outputs audio in analog form from DAC.
